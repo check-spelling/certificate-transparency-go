@@ -58,7 +58,7 @@ const (
 	UnconstrainedName
 	// TooManyConstraints results when the number of comparison operations
 	// needed to check a certificate exceeds the limit set by
-	// VerifyOptions.MaxConstraintComparisions. This limit exists to
+	// VerifyOptions.MaxConstraintComparisons. This limit exists to
 	// prevent pathological certificates can consuming excessive amounts of
 	// CPU time to verify.
 	TooManyConstraints
@@ -207,12 +207,12 @@ type VerifyOptions struct {
 	// Certificate chains are required to nest these extended key usage values.
 	// (This matches the Windows CryptoAPI behavior, but not the spec.)
 	KeyUsages []ExtKeyUsage
-	// MaxConstraintComparisions is the maximum number of comparisons to
+	// MaxConstraintComparisons is the maximum number of comparisons to
 	// perform when checking a given certificate's name constraints. If
 	// zero, a sensible default is used. This limit prevents pathological
 	// certificates from consuming excessive amounts of CPU time when
 	// validating.
-	MaxConstraintComparisions int
+	MaxConstraintComparisons int
 }
 
 const (
@@ -599,7 +599,7 @@ func (c *Certificate) isValid(certType int, currentChain []*Certificate, opts *V
 		}
 	}
 
-	maxConstraintComparisons := opts.MaxConstraintComparisions
+	maxConstraintComparisons := opts.MaxConstraintComparisons
 	if maxConstraintComparisons == 0 {
 		maxConstraintComparisons = 250000
 	}
@@ -820,7 +820,7 @@ func appendToFreshChain(chain []*Certificate, cert *Certificate) []*Certificate 
 }
 
 // maxChainSignatureChecks is the maximum number of CheckSignatureFrom calls
-// that an invocation of buildChains will (tranistively) make. Most chains are
+// that an invocation of buildChains will (transitively) make. Most chains are
 // less than 15 certificates long, so this leaves space for multiple chains and
 // for failed checks due to different intermediates having the same Subject.
 const maxChainSignatureChecks = 100

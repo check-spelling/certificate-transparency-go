@@ -133,7 +133,7 @@ type HammerConfig struct {
 	// Rate limiter
 	Limiter Limiter
 	// MaxParallelChains sets the upper limit for the number of parallel
-	// add-*-chain requests to make when the biasing model says to perfom an add.
+	// add-*-chain requests to make when the biasing model says to perform an add.
 	MaxParallelChains int
 	// EmitInterval defines how frequently stats are logged.
 	EmitInterval time.Duration
@@ -499,7 +499,7 @@ func (s *hammerState) addChainInvalid(ctx context.Context) error {
 	return nil
 }
 
-// chooseCertToAdd determines whether to add a new or pre-existing cert.
+// chooseCertToAdd determines whether to add a new or preexisting cert.
 func (s *hammerState) chooseCertToAdd() Choice {
 	if s.cfg.DuplicateChance > 0 && rand.Intn(s.cfg.DuplicateChance) == 0 {
 		// TODO(drysdale): restore LastCert as an option

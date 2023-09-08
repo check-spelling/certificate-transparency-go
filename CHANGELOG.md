@@ -164,7 +164,7 @@ entries whose `start` parameter does not fall on a multiple of the maximum
 permitted number of entries, will have their responses truncated such that
 subsequent requests will align with this boundary.
 This is intended to coerce callers of `get-entries` into all using the same
-`start` and `end` parameters and thereby increase the cachability of
+`start` and `end` parameters and thereby increase the cacheability of
 these requests.
 
 e.g.:
@@ -600,7 +600,7 @@ Commit [3955e4a00c42e83ff17ce25003976159c5d0f0f9](https://api.github.com/repos/g
 
 Published 2018-06-01 14:02:58 +0000 UTC
 
-This release is mostly fixes to the `x509` and `asn1` packages. Some command line utilties were also updated.
+This release is mostly fixes to the `x509` and `asn1` packages. Some command line utilities were also updated.
 
 Commit [ae40d07cce12f1227c6e658e61c9dddb7646f97b](https://api.github.com/repos/google/certificate-transparency-go/commits/ae40d07cce12f1227c6e658e61c9dddb7646f97b) Download [zip](https://api.github.com/repos/google/certificate-transparency-go/zipball/v1.0.5)
 
